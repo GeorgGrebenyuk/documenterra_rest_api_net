@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35122.118
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DTerraRestApiLib", "src\DTerraRestApiLib\DTerraRestApiLib.csproj", "{F30A1E08-DB21-4B67-8854-41D4F6C1B9BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTerraRestApiTests", "src\DTerraRestApiTests\DTerraRestApiTests.csproj", "{CC176446-674E-4AE1-A3A5-40F0941E4186}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F30A1E08-DB21-4B67-8854-41D4F6C1B9BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F30A1E08-DB21-4B67-8854-41D4F6C1B9BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F30A1E08-DB21-4B67-8854-41D4F6C1B9BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F30A1E08-DB21-4B67-8854-41D4F6C1B9BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC176446-674E-4AE1-A3A5-40F0941E4186}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC176446-674E-4AE1-A3A5-40F0941E4186}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC176446-674E-4AE1-A3A5-40F0941E4186}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC176446-674E-4AE1-A3A5-40F0941E4186}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AFD87E0F-6611-41FA-865A-5047A4F8F799}
+	EndGlobalSection
+EndGlobal
