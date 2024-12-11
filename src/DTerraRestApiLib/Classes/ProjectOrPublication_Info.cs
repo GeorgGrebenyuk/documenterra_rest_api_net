@@ -5,11 +5,14 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace DTerraRestApiLib.ProjectAndPublication
+namespace DTerraRestApiLib.Classes
 {
+    /// <summary>
+    /// Описание структуры проекта или публикации (возвращаемое значение из сервера)
+    /// </summary>
     public class ProjectOrPublication_Info
     {
-        public string createdOn {  get; set; }
+        public string createdOn { get; set; }
 
         public string fullUrl { get; set; }
 
@@ -31,6 +34,11 @@ namespace DTerraRestApiLib.ProjectAndPublication
         {
             return (ProjectOrPublication_Info?)JsonSerializer.Deserialize(json,
                              typeof(ProjectOrPublication_Info), CommonData.p_JsonSerializerOptions_Read); ;
+        }
+
+        public string ToJson()
+        {
+            return JsonSerializer.Serialize(this, typeof(ProjectOrPublication_Info), CommonData.p_JsonSerializerOptions_Write);
         }
     }
 }

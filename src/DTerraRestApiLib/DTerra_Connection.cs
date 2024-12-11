@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Net;
 
 namespace DTerraRestApiLib
 {
@@ -20,7 +21,8 @@ namespace DTerraRestApiLib
             GET = 1,
             POST = 4,
             PATCH = 8,
-            DEL = 16
+            DEL = 16,
+            HEAD = 32
         }
 
         public DTerra_Connection(string API_Link, string Login, string Password)
@@ -43,7 +45,7 @@ namespace DTerraRestApiLib
 
 #endif
 
-        public void CreateRequest(ConnectType c_type, string Address, string command, out string response)
+        public void CreateRequest(ConnectType c_type, string Address, string command, out string response, out HttpStatusCode status)
         {
             //response = "";
             var client = new RestClient(p_API_Link);
@@ -65,6 +67,7 @@ namespace DTerraRestApiLib
                 else if (c_type == ConnectType.PATCH) _r = client.Patch(request);
                 else if (c_type == ConnectType.GET) _r = client.Get(request);
                 else if (c_type == ConnectType.DEL) _r = client.Delete(request);
+                else if (c_type == ConnectType.HEAD) _r = client.Head(request);
             }
             catch (Exception e)
             {
@@ -73,6 +76,7 @@ namespace DTerraRestApiLib
                 Console.Out.WriteLine(e.Message);
             }
             response = _r.Content ?? ""; // Raw content as string
+            status = _r.StatusCode;
         }
     }
 }

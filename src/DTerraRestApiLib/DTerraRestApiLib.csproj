@@ -1,6 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <TargetName>DocTerraRestApiLib</TargetName>
     <TargetFramework>net6.0</TargetFramework>
     <OutDir>$(SolutionDir)bin\$(Configuration)</OutDir>
     <Nullable>enable</Nullable>
@@ -15,15 +16,6 @@
 
   <ItemGroup>
     <PackageReference Include="RestSharp" Version="112.1.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Users\" />
-    <Folder Include="Pages\" />
-    <Folder Include="TOC_Elements\" />
-    <Folder Include="Storage\" />
-    <Folder Include="Search\" />
-    <Folder Include="ReportsAndAnalytics\" />
   </ItemGroup>
 
 </Project>
