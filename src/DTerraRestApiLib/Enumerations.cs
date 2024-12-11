@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DTerraRestApiLib.Enumerations
+namespace DocTerraRestApiLib.Enumerations
 {
     /// <summary>
     /// Варианты видимости публикации

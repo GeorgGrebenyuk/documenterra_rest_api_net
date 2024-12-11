@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
-using DTerraRestApiLib.Enumerations;
+using DocTerraRestApiLib.Enumerations;
 
-namespace DTerraRestApiLib.Classes
+namespace DocTerraRestApiLib.Classes
 {
     /// <summary>
     /// Описание структуры проекта для публикации

@@ -8,7 +8,7 @@ using System.IO;
 using System.Net;
 using System.Threading;
 
-namespace DTerraRestApiLib
+namespace DocTerraRestApiLib
 {
     public class DTerra_Connection
     {

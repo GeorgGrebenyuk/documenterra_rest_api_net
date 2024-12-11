@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace DTerraRestApiLib.Classes
+namespace DocTerraRestApiLib.Classes
 {
     /// <summary>
     /// Информация об одном файле в хранилище

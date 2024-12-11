@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace DTerraRestApiLib
+namespace DocTerraRestApiLib
 {
     internal class DTerra_Error
     {

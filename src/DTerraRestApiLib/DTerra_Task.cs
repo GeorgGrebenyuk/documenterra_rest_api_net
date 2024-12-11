@@ -5,7 +5,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DTerraRestApiLib
+namespace DocTerraRestApiLib
 {
     /// <summary>
     /// Вспомогательный класс для описания задания для Документерра Rest API

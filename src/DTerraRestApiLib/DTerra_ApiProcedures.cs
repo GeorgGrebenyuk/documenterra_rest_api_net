@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
-using DTerraRestApiLib.Enumerations;
-using DTerraRestApiLib.Classes;
+using DocTerraRestApiLib.Enumerations;
+using DocTerraRestApiLib.Classes;
 using System.Buffers.Text;
 using System.Net;
 using System.IO;
 
-namespace DTerraRestApiLib
+namespace DocTerraRestApiLib
 {
 
     public class DTerra_ApiProcedures

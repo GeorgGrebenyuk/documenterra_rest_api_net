@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DTerraRestApiLib.Classes
+namespace DocTerraRestApiLib.Classes
 {
     /// <summary>
     /// Вспомогательный класс для удаления группы файлов из Документерры

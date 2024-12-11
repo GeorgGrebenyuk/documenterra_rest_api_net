@@ -5,7 +5,7 @@ VisualStudioVersion = 17.10.35122.118
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocTerraRestApiLib", "src\DTerraRestApiLib\DocTerraRestApiLib.csproj", "{F30A1E08-DB21-4B67-8854-41D4F6C1B9BA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DTerraRestApiTests", "src\DTerraRestApiTests\DTerraRestApiTests.csproj", "{CC176446-674E-4AE1-A3A5-40F0941E4186}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocTerraRestApiTests", "src\DTerraRestApiTests\DocTerraRestApiTests.csproj", "{CC176446-674E-4AE1-A3A5-40F0941E4186}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
