@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Net;
+using System.Threading;
 
 namespace DTerraRestApiLib
 {
@@ -45,7 +46,7 @@ namespace DTerraRestApiLib
 
 #endif
 
-        public void CreateRequest(ConnectType c_type, string Address, string command, out string response, out HttpStatusCode status)
+        public async Task<DTerra_Task> CreateRequest(ConnectType c_type, string Address, string command)
         {
             //response = "";
             var client = new RestClient(p_API_Link);
@@ -61,13 +62,14 @@ namespace DTerraRestApiLib
             }
 
             RestResponse _r = new RestResponse();
+
             try
             {
-                if (c_type == ConnectType.POST) _r = client.Post(request);
-                else if (c_type == ConnectType.PATCH) _r = client.Patch(request);
-                else if (c_type == ConnectType.GET) _r = client.Get(request);
-                else if (c_type == ConnectType.DEL) _r = client.Delete(request);
-                else if (c_type == ConnectType.HEAD) _r = client.Head(request);
+                if (c_type == ConnectType.POST) _r = await client.ExecutePostAsync(request);
+                else if (c_type == ConnectType.PATCH) _r = await client.ExecutePatchAsync(request);
+                else if (c_type == ConnectType.GET) _r = await client.ExecuteGetAsync(request);
+                else if (c_type == ConnectType.DEL) _r = await client.ExecuteDeleteAsync(request);
+                else if (c_type == ConnectType.HEAD) _r = await client.ExecuteHeadAsync(request);
             }
             catch (Exception e)
             {
@@ -75,8 +77,7 @@ namespace DTerraRestApiLib
                 Console.Out.WriteLine("-----------------");
                 Console.Out.WriteLine(e.Message);
             }
-            response = _r.Content ?? ""; // Raw content as string
-            status = _r.StatusCode;
+            return new DTerra_Task(_r);
         }
     }
 }

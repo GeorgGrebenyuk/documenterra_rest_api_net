@@ -1,7 +1,6 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetName>DocTerraRestApiLib</TargetName>
     <TargetFramework>net6.0</TargetFramework>
     <OutDir>$(SolutionDir)bin\$(Configuration)</OutDir>
     <Nullable>enable</Nullable>
