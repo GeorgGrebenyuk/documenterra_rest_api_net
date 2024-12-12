@@ -5,7 +5,7 @@ VisualStudioVersion = 17.10.35122.118
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocTerraRestApiTests", "src\DTerraRestApiTests\DocTerraRestApiTests.csproj", "{CC176446-674E-4AE1-A3A5-40F0941E4186}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModifyImagesBorder", "examples\DocTerraRestApi_Example_ModifyImagesBorder\ModifyImagesBorder.csproj", "{ED3D4377-4B95-451F-A8DF-6B95B464D0D2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModifyImagesBorder", "examples\ModifyImagesBorder\ModifyImagesBorder.csproj", "{ED3D4377-4B95-451F-A8DF-6B95B464D0D2}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocTerraRestApiLib", "src\DTerraRestApiLib\DocTerraRestApiLib.csproj", "{0159D380-B286-40E9-9F7C-59641BE83CCE}"
 EndProject
