@@ -6,21 +6,17 @@ using System.Threading.Tasks;
 
 namespace DocTerraRestApiLib.Classes
 {
-    /// <summary>
-    /// Вспомогательный класс для удаления группы файлов из Документерры
-    /// </summary>
-    public class Storage_FilesDelete
+    internal class ProjectBackup
     {
-        public string[]? fileFullNames {  get; set; }
-        public Storage_FilesDelete(string[] fileFullNames)
+        public string? outputFileName { get; set; }
+        public ProjectBackup(string outputFileName)
         {
-            this.fileFullNames = fileFullNames;
+            this.outputFileName = outputFileName;
         }
 
         public string ToJson()
         {
             return System.Text.Json.JsonSerializer.Serialize(this, typeof(Storage_FilesDelete), CommonData.p_JsonSerializerOptions_Write);
         }
-
     }
 }

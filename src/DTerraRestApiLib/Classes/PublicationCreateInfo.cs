@@ -11,23 +11,23 @@ namespace DocTerraRestApiLib.Classes
     /// <summary>
     /// Описание структуры проекта для публикации
     /// </summary>
-    public class PublicationCreate_Info
+    public class PublicationCreateInfo
     {
-        public string pubId { get; set; }
+        public string? pubId { get; set; }
 
-        public string pubName { get; set; }
+        public string? pubName { get; set; }
 
-        public bool isPublishOnlyReadyTopics { get; set; } = false;
+        public bool? isPublishOnlyReadyTopics { get; set; }
 
-        public string[] outputTags { get; set; } = new string[] { };
+        public string[]? outputTags { get; set; }
 
         [JsonIgnore]
         public PublicationVisibilityVariant pubVisibility0 { get; set; } = PublicationVisibilityVariant.Private;
-        public string pubVisibility { get { return pubVisibility0.ToString(); } }
+        public string? pubVisibility { get { return pubVisibility0.ToString(); } }
 
-        public string[] publishedTocNodeIds { get; set; } = new string[] { };
+        public string[]? publishedTocNodeIds { get; set; }
 
-        public PublicationCreate_Info(string pubId, string pubName)
+        public PublicationCreateInfo(string pubId, string pubName)
         {
             this.pubId = pubId;
             this.pubName = pubName;
@@ -35,7 +35,7 @@ namespace DocTerraRestApiLib.Classes
 
         public string ToJson()
         {
-            return System.Text.Json.JsonSerializer.Serialize(this, typeof(PublicationCreate_Info), CommonData.p_JsonSerializerOptions_Write);
+            return System.Text.Json.JsonSerializer.Serialize(this, typeof(PublicationCreateInfo), CommonData.p_JsonSerializerOptions_Write);
         }
     }
 }

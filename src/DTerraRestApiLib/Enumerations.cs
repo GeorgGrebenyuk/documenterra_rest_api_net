@@ -16,11 +16,38 @@ namespace DocTerraRestApiLib.Enumerations
         Restricted //Ограниченная
     }
 
+    /// <summary>
+    /// Варианты режимов обновления документации (для публикации)
+    /// </summary>
     public enum UpdateModeVariant
     {
-        FullReplace,
-        Partial
+        FullReplace, // Полностью
+        Partial //Частично
     }
 
+    /// <summary>
+    /// Варианты экспорта публикации в представление
+    /// </summary>
+    public enum PublicationFormatVariant
+    {
+        WebHelp,
+        PureHtml,
+        Chm,
+        Pdf,
+        Doc,
+        Docx,
+        Rtf,
+        Epub,
+        Mht,
+        Odt
+    }
+
+    /// <summary>
+    /// Варианты формата файла
+    /// </summary>
+    public enum FormatVariant
+    {
+        base64
+    }
 
 }

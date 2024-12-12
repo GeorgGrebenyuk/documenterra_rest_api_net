@@ -11,9 +11,9 @@ namespace DocTerraRestApiLib.Classes
     /// </summary>
     public class Storage_FileUpdateInfo
     {
-        public string updatedFields { get; set; }
+        public string? updatedFields { get; set; }
 
-        public string content { get; set; }
+        public string? content { get; set; }
 
         public Storage_FileUpdateInfo(string content)
         {

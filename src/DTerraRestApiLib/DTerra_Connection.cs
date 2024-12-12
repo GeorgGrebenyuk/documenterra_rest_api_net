@@ -45,8 +45,8 @@ namespace DocTerraRestApiLib
         }
 
 #endif
-
-        public async Task<DTerra_Task> CreateRequest(ConnectType c_type, string Address, string command)
+        //async Task<DTerra_Task>
+        public DTerra_Task CreateRequest(ConnectType c_type, string Address, string command)
         {
             //response = "";
             var client = new RestClient(p_API_Link);
@@ -65,11 +65,17 @@ namespace DocTerraRestApiLib
 
             try
             {
-                if (c_type == ConnectType.POST) _r = await client.ExecutePostAsync(request);
-                else if (c_type == ConnectType.PATCH) _r = await client.ExecutePatchAsync(request);
-                else if (c_type == ConnectType.GET) _r = await client.ExecuteGetAsync(request);
-                else if (c_type == ConnectType.DEL) _r = await client.ExecuteDeleteAsync(request);
-                else if (c_type == ConnectType.HEAD) _r = await client.ExecuteHeadAsync(request);
+                //if (c_type == ConnectType.POST) _r = await client.ExecutePostAsync(request);
+                //else if (c_type == ConnectType.PATCH) _r = await client.ExecutePatchAsync(request);
+                //else if (c_type == ConnectType.GET) _r = await client.ExecuteGetAsync(request);
+                //else if (c_type == ConnectType.DEL) _r = await client.ExecuteDeleteAsync(request);
+                //else if (c_type == ConnectType.HEAD) _r = await client.ExecuteHeadAsync(request);
+
+                if (c_type == ConnectType.POST) _r = client.Post(request);
+                else if (c_type == ConnectType.PATCH) _r = client.Patch(request);
+                else if (c_type == ConnectType.GET) _r = client.Get(request);
+                else if (c_type == ConnectType.DEL) _r = client.Delete(request);
+                else if (c_type == ConnectType.HEAD) _r = client.Head(request);
             }
             catch (Exception e)
             {

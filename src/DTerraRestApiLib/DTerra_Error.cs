@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace DocTerraRestApiLib
 {
+    //TODO
     internal class DTerra_Error
     {
         public string Message { get; set; }

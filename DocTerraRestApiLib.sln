@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocTerraRestApiLib", "src\D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocTerraRestApiTests", "src\DTerraRestApiTests\DocTerraRestApiTests.csproj", "{CC176446-674E-4AE1-A3A5-40F0941E4186}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocTerraRestApi_Example_ModifyImagesBorder", "examples\DocTerraRestApi_Example_ModifyImagesBorder\DocTerraRestApi_Example_ModifyImagesBorder.csproj", "{ED3D4377-4B95-451F-A8DF-6B95B464D0D2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{CC176446-674E-4AE1-A3A5-40F0941E4186}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC176446-674E-4AE1-A3A5-40F0941E4186}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC176446-674E-4AE1-A3A5-40F0941E4186}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED3D4377-4B95-451F-A8DF-6B95B464D0D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED3D4377-4B95-451F-A8DF-6B95B464D0D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED3D4377-4B95-451F-A8DF-6B95B464D0D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED3D4377-4B95-451F-A8DF-6B95B464D0D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
