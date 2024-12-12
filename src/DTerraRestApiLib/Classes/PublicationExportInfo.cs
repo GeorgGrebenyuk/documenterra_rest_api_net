@@ -27,9 +27,9 @@ namespace DocTerraRestApiLib.Classes
 
         }
         [JsonIgnore]
-        public PublicationFormatVariant format0 { get; set; }
+        public PublicationFormatVariant? format0 { get; set; }
 
-        public string? format { get { return format0.ToString(); } }
+        public string? format { get { return format0?.ToString() ?? null; } }
 
         public string? outputFileName { get; set; }
 

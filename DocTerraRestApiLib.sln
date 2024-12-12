@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35122.118
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocTerraRestApiLib", "src\DTerraRestApiLib\DocTerraRestApiLib.csproj", "{F30A1E08-DB21-4B67-8854-41D4F6C1B9BA}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocTerraRestApiTests", "src\DTerraRestApiTests\DocTerraRestApiTests.csproj", "{CC176446-674E-4AE1-A3A5-40F0941E4186}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocTerraRestApi_Example_ModifyImagesBorder", "examples\DocTerraRestApi_Example_ModifyImagesBorder\DocTerraRestApi_Example_ModifyImagesBorder.csproj", "{ED3D4377-4B95-451F-A8DF-6B95B464D0D2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModifyImagesBorder", "examples\DocTerraRestApi_Example_ModifyImagesBorder\ModifyImagesBorder.csproj", "{ED3D4377-4B95-451F-A8DF-6B95B464D0D2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocTerraRestApiLib", "src\DTerraRestApiLib\DocTerraRestApiLib.csproj", "{0159D380-B286-40E9-9F7C-59641BE83CCE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +15,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F30A1E08-DB21-4B67-8854-41D4F6C1B9BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F30A1E08-DB21-4B67-8854-41D4F6C1B9BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F30A1E08-DB21-4B67-8854-41D4F6C1B9BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F30A1E08-DB21-4B67-8854-41D4F6C1B9BA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CC176446-674E-4AE1-A3A5-40F0941E4186}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CC176446-674E-4AE1-A3A5-40F0941E4186}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC176446-674E-4AE1-A3A5-40F0941E4186}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -27,6 +23,10 @@ Global
 		{ED3D4377-4B95-451F-A8DF-6B95B464D0D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED3D4377-4B95-451F-A8DF-6B95B464D0D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED3D4377-4B95-451F-A8DF-6B95B464D0D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0159D380-B286-40E9-9F7C-59641BE83CCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0159D380-B286-40E9-9F7C-59641BE83CCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0159D380-B286-40E9-9F7C-59641BE83CCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0159D380-B286-40E9-9F7C-59641BE83CCE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

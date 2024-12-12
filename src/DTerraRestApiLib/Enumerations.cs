@@ -50,4 +50,17 @@ namespace DocTerraRestApiLib.Enumerations
         base64
     }
 
+    /// <summary>
+    /// Тип действия, примененного к странице
+    /// </summary>
+    public enum actionTypeVariant
+    {
+        _None,
+        DirectNavigation,
+        FromToc,
+        FromIndex,
+        FromSearch,
+        FromContextHelp
+    }
+
 }

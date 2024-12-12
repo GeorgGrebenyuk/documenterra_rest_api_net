@@ -31,8 +31,8 @@ namespace DocTerraRestApiLib.Classes
         public string[]? outputTags { get; set; }
 
         [JsonIgnore]
-        public PublicationVisibilityVariant pubVisibility0 { get; set; } = PublicationVisibilityVariant.Private;
-        public string? pubVisibility { get { return pubVisibility0.ToString(); } }
+        public PublicationVisibilityVariant? pubVisibility0 { get; set; }
+        public string? pubVisibility { get { return pubVisibility0?.ToString() ?? null; } }
 
         public string[]? publishedTocNodeIds { get; set; }
 
