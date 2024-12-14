@@ -27,25 +27,26 @@ namespace DocTerraRestApiLib
             HEAD = 32
         }
 
+        //private DTerra_Connection() { }
+
         public DTerra_Connection(string API_Link, string Login, string Password)
         {
             this.p_API_Link = API_Link;
             this.p_Login = Login;
             this.p_Password = Password;
         }
-#if DEBUG
-        public DTerra_Connection()
-        {
-            string projectPath = Path.Combine(new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory)?.Parent?.Parent?.FullName ?? "", "dterra_reg.txt");
-            if (!File.Exists(projectPath)) throw new FileNotFoundException("Reg Data project not exists in library's project folder!");
 
-            string[] regData = System.IO.File.ReadAllLines(projectPath);
-            p_API_Link = regData[0];
-            p_Login = regData[1];
-            p_Password = regData[2];
+        public DTerra_Connection(string filePath)
+        {
+            if (!File.Exists(filePath)) throw new FileNotFoundException("File wan not found by path " + filePath);
+
+            string[] regData = System.IO.File.ReadAllLines(filePath);
+
+            this.p_API_Link = regData[0];
+            this.p_Login = regData[1];
+            this.p_Password = regData[2];
         }
 
-#endif
         //async Task<DTerra_Task>
         public DTerra_Task CreateRequest(ConnectType c_type, string Address, string command)
         {
