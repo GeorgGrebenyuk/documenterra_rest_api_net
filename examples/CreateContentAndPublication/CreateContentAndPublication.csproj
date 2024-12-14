@@ -14,4 +14,8 @@
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\DTerraRestApiLib\DocTerraRestApiLib.csproj" />
+  </ItemGroup>
+
 </Project>

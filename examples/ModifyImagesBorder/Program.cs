@@ -19,7 +19,6 @@ namespace DocTerraRestApi_Example_ModifyImagesBorder
 #if DEBUG
             input_data = new InputArgs("project-nbim-sdk/articles");
             input_data.BorderSize = 2;
-            args = new string[] { "project-nbim-sdk/articles", "*.jpg", "0;0;0", "2" };
 #else
             input_data = new InputArgs(args[0]);
             input_data.ImageExtension = args[1];
@@ -27,11 +26,12 @@ namespace DocTerraRestApi_Example_ModifyImagesBorder
             input_data.Color = Color.FromArgb(color_def[0], color_def[1], color_def[2]);
             input_data.BorderSize = int.Parse(args[3]);
 #endif
-            Color t_color = input_data.Color ?? InputArgs.ColorBlack;
-            DTerra_Connection connection = new DTerra_Connection();
+            string projectPath = Path.Combine(new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory)?.Parent?.Parent?.FullName ?? "", "dterra_reg.txt");
+            DTerra_Connection connection = new DTerra_Connection(projectPath);
+
             DTerra_ApiProcedures dTerra_ApiActions = new DTerra_ApiProcedures(connection);
 
-            var files_at_project = dTerra_ApiActions.GetFilesInfoFromStorage(args[0], args[1], true);
+            var files_at_project = dTerra_ApiActions.GetFilesInfoFromStorage(input_data.Storage_path, input_data.ImageExtension, true);
             if (files_at_project == null) return;
 
             foreach (Storage_FileInfo? file_at_project_Info in files_at_project)
@@ -85,8 +85,8 @@ namespace DocTerraRestApi_Example_ModifyImagesBorder
                             {
                                 for (int height_c = 0; height_c <= increaseStep; height_c++)
                                 {
-                                    imageNew.SetPixel(width_c, height_c, t_color);
-                                    imageNew.SetPixel(width_c, imageNew.Height - height_c - 1, t_color);
+                                    imageNew.SetPixel(width_c, height_c, input_data.Color);
+                                    imageNew.SetPixel(width_c, imageNew.Height - height_c - 1, input_data.Color);
                                 }
                             }
 
@@ -95,8 +95,8 @@ namespace DocTerraRestApi_Example_ModifyImagesBorder
                             {
                                 for (int width_c = 0; width_c <= increaseStep; width_c++)
                                 {
-                                    imageNew.SetPixel(width_c, height_c, t_color);
-                                    imageNew.SetPixel(imageNew.Width - width_c - 1, height_c, t_color);
+                                    imageNew.SetPixel(width_c, height_c, input_data.Color);
+                                    imageNew.SetPixel(imageNew.Width - width_c - 1, height_c, input_data.Color);
                                 }
                             }
 
@@ -135,8 +135,8 @@ namespace DocTerraRestApi_Example_ModifyImagesBorder
                         {
                             var pixel_info_bottom = image.GetPixel(width_c, offset);
                             var pixel_info_top = image.GetPixel(width_c, image.Height - offset);
-                            if (pixel_info_bottom != t_color) { is_color = false; break; }
-                            if (pixel_info_top != t_color) { is_color = false; break; }
+                            if (pixel_info_bottom != input_data.Color) { is_color = false; break; }
+                            if (pixel_info_top != input_data.Color) { is_color = false; break; }
                         }
 
                         //Проверка левой и правой вертикальных границ растра
@@ -144,8 +144,8 @@ namespace DocTerraRestApi_Example_ModifyImagesBorder
                         {
                             var pixel_info_left = image.GetPixel(offset, height_c);
                             var pixel_info_right = image.GetPixel(image.Width - offset, height_c);
-                            if (pixel_info_left != t_color) { is_color = false; break; }
-                            if (pixel_info_right != t_color) { is_color = false; break; }
+                            if (pixel_info_left != input_data.Color) { is_color = false; break; }
+                            if (pixel_info_right != input_data.Color) { is_color = false; break; }
                         }
                         return is_color;
                     }
