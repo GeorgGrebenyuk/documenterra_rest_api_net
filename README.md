@@ -4,6 +4,10 @@ Source code for Documenterra rest api via .NET and RestSharp package
 
 Исходный код для Nuget-пакета `DocTerraRestApiLib` (`net6.0` и `RestSharp`).
 
+# Использование
+
+См. [отдельный файл](src/DTerraRestApiLib/README.md).
+
 # Функциональность
 
 Далее приведено сопоставление имеющихся методов [API в Документерре](https://docs.documenterra.ru/articles/#!manual/api-dokumenterry) с реализованными в настоящей библиотеке. 
