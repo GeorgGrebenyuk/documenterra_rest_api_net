@@ -2,17 +2,44 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net6.0</TargetFrameworks>
-    <!--<OutDir>$(SolutionDir)bin\$(Configuration)</OutDir>-->
     <Nullable>enable</Nullable>
     <LangVersion>Latest</LangVersion>
     <AppendTargetFrameworkToOutputPath>true</AppendTargetFrameworkToOutputPath>
-    <!--<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>-->
     <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
     <GenerateDependencyFile>true</GenerateDependencyFile>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <Version>1.0.0</Version>
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <Title>DocTerraRestApiLib</Title>
+    <Authors>GeorgGrebenyuk</Authors>
+    <Company />
+    <Description>Auxiliary library for working with Documenterra's server (documenterra.ru) via it's REST API with RestSharp</Description>
+    <Copyright>GeorgGrebenyuk</Copyright>
+    <PackageProjectUrl>https://github.com/GeorgGrebenyuk/documenterra_rest_api_net</PackageProjectUrl>
+    <PackageIcon>doc_terra_icon.png</PackageIcon>
+    <RepositoryUrl>https://github.com/GeorgGrebenyuk/documenterra_rest_api_net</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageOutputPath>$(SolutionDir)nupkg</PackageOutputPath>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="images\doc_terra_icon.png" />
+    <None Remove="README.md" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="images\doc_terra_icon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </EmbeddedResource>
+    <EmbeddedResource Include="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </EmbeddedResource>
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="RestSharp" Version="112.1.0" />

@@ -16,6 +16,7 @@ namespace DocTerraRestApiLib
         private string p_Login;
         private string p_Password;
 
+
         public enum ConnectType : int
         {
             //TODO new types?
@@ -79,7 +80,7 @@ namespace DocTerraRestApiLib
             }
             catch (Exception e)
             {
-                //DTerra_Error? errorHandler = DTerra_Error.LoadFrom(e.Message);
+                //TODO: DTerra_Error? errorHandler = DTerra_Error.LoadFrom(e.Message);
                 Console.Out.WriteLine("-----------------");
                 Console.Out.WriteLine(e.Message);
             }

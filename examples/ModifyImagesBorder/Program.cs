@@ -5,6 +5,7 @@ using System.Drawing;
 
 using DocTerraRestApiLib;
 using DocTerraRestApiLib.Classes;
+using ModifyImagesBorder;
 
 namespace DocTerraRestApi_Example_ModifyImagesBorder
 {
@@ -14,18 +15,24 @@ namespace DocTerraRestApi_Example_ModifyImagesBorder
         [STAThread]
         static void Main(string[] args)
         {
+            InputArgs input_data;
 #if DEBUG
+            input_data = new InputArgs("project-nbim-sdk/articles");
+            input_data.BorderSize = 2;
             args = new string[] { "project-nbim-sdk/articles", "*.jpg", "0;0;0", "2" };
+#else
+            input_data = new InputArgs(args[0]);
+            input_data.ImageExtension = args[1];
+            int[] color_def = args[2].Split(';').Select(a => int.Parse(a)).ToArray();
+            input_data.Color = Color.FromArgb(color_def[0], color_def[1], color_def[2]);
+            input_data.BorderSize = int.Parse(args[3]);
 #endif
+            Color t_color = input_data.Color ?? InputArgs.ColorBlack;
             DTerra_Connection connection = new DTerra_Connection();
             DTerra_ApiProcedures dTerra_ApiActions = new DTerra_ApiProcedures(connection);
 
             var files_at_project = dTerra_ApiActions.GetFilesInfoFromStorage(args[0], args[1], true);
             if (files_at_project == null) return;
-
-            int[] color_def = args[2].Split(';').Select(a => int.Parse(a)).ToArray();
-            System.Drawing.Color t_color = System.Drawing.Color.FromArgb(color_def[0], color_def[1], color_def[2]);
-            int t_image_border = int.Parse(args[3]);
 
             foreach (Storage_FileInfo? file_at_project_Info in files_at_project)
             {
@@ -47,15 +54,15 @@ namespace DocTerraRestApi_Example_ModifyImagesBorder
                     //border_size -= 1;
 
                    
-                    if (border_size != t_image_border)
+                    if (border_size != input_data.BorderSize)
                     {
                         Bitmap? imageNew = null;
                         //int[][] new_raster_def = new int[1][];
                         //Нужно создать новый растр с размерами больше или меньше на недостающее число полей
                         //Сперва определим, нужно будет его уменьшать или увеличивать
-                        if (border_size > t_image_border)
+                        if (border_size > input_data.BorderSize)
                         {
-                            int reduceStep = border_size - t_image_border;
+                            int reduceStep = border_size - input_data.BorderSize;
                             imageNew = new Bitmap(image.Width - 2 * reduceStep, image.Height - 2 * reduceStep);
                             //нужно уменьшить
                             //new_raster_def = new int[image.Width - (border_size - image_border)][];
@@ -67,9 +74,9 @@ namespace DocTerraRestApi_Example_ModifyImagesBorder
                                }
                             }
                         }
-                        else if (border_size < t_image_border)
+                        else if (border_size < input_data.BorderSize)
                         {
-                            int increaseStep = t_image_border - border_size;
+                            int increaseStep = input_data.BorderSize - border_size;
                             //сперва нужно запомнить новый растр черными полями, а потом перенести данные из оригинального растра
                             imageNew = new Bitmap(image.Width + 2 * increaseStep, image.Height + 2 * increaseStep);
 

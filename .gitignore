@@ -61,3 +61,6 @@ Thumbs.db
 *.lnk
 # Documenterra account data (secret)
 dterra_reg.txt
+
+#Nupkg-directory
+nupkg

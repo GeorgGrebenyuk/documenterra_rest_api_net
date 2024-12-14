@@ -9,7 +9,6 @@ using DocTerraRestApiLib.Classes;
 using System.Buffers.Text;
 using System.Net;
 using System.IO;
-using static System.Net.WebRequestMethods;
 using System.Collections;
 using System.Xml.Linq;
 using System.Linq.Expressions;
