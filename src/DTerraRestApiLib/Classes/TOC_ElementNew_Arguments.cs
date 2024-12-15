@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace DocTerraRestApiLib.Classes
 {
@@ -11,7 +12,8 @@ namespace DocTerraRestApiLib.Classes
     {
         public string? caption { get; set; }
 
-        public bool? isShowInToc { get; set; } = false;
+        [JsonPropertyName("isShowInToc")]
+        public bool? ShowFolderIcon { get; set; } = false;
 
         public int? ordinalNo { get; set; } = -1; //TODO: проверить, дейстует ли это как по-умолчанию (не учитывать)
 
