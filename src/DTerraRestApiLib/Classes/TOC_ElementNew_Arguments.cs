@@ -12,11 +12,14 @@ namespace DocTerraRestApiLib.Classes
     {
         public string? caption { get; set; }
 
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonPropertyName("isShowInToc")]
         public bool? ShowFolderIcon { get; set; } = false;
 
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? ordinalNo { get; set; } = -1; //TODO: проверить, дейстует ли это как по-умолчанию (не учитывать)
 
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? parentId { get; set; } = null;
 
         public string ToJson()

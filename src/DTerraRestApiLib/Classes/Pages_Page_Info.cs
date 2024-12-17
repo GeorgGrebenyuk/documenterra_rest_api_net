@@ -26,15 +26,15 @@ namespace DocTerraRestApiLib.Classes
 
         public string? id { get; set; }
 
-        public string? indexKeywords { private get; set; }
+        public string[]? indexKeywords { get; set; }
 
-        public string[]? indexKeywords0 { 
-            get {
-                if (indexKeywords == null) return null;
-                if (indexKeywords.Contains(",")) return indexKeywords.Split(',');
-                else return new string[] { indexKeywords };
-            } 
-        }
+        //public string[]? indexKeywords0 { 
+        //    get {
+        //        if (indexKeywords == null) return null;
+        //        if (indexKeywords.Contains(",")) return indexKeywords.Split(',');
+        //        else return new string[] { indexKeywords };
+        //    } 
+        //}
 
         public DateTime? modifiedOn { get; set; }
 

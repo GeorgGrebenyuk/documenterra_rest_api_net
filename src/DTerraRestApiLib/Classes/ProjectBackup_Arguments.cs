@@ -2,14 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace DocTerraRestApiLib.Classes
 {
-    internal class ProjectBackup
+    internal class ProjectBackup_Arguments
     {
         public string? outputFileName { get; set; }
-        public ProjectBackup(string outputFileName)
+
+        public ProjectBackup_Arguments(string outputFileName)
         {
             this.outputFileName = outputFileName;
         }

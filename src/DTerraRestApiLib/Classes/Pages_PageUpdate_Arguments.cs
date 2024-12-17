@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace DocTerraRestApiLib.Classes
 {
@@ -9,19 +10,25 @@ namespace DocTerraRestApiLib.Classes
     /// </summary>
     public class Pages_PageUpdate_Arguments
     {
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? assigneeUserName { get; set; }
 
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? body { get; set; }
 
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ownerUserName { get; set; }
 
-        public string? statusName { get; set; }
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? statusName { get; set; } = "draft";
 
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? title { get; set; }
 
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string[]? indexKeywords { get; set; }
 
-        public string? updatedFields { get; internal set; }
+        public string? updatedFields { get; set; }
 
         public string ToJson()
         {

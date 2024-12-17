@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace DocTerraRestApiLib.Classes
 {
@@ -8,13 +9,16 @@ namespace DocTerraRestApiLib.Classes
     {
         public string? caption { get; set; }
 
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? isShowInToc { get; set; } = false;
 
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? ordinalNo { get; set; }
 
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? parentId { get; set; } = null;
 
-        public string? updatedFields { get; internal set; }
+        public string? updatedFields { get; set; }
 
         public string ToJson()
         {

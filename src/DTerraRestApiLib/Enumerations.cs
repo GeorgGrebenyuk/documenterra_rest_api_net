@@ -63,4 +63,10 @@ namespace DocTerraRestApiLib.Enumerations
         FromContextHelp
     }
 
+
+    public enum StatusVariant
+    {
+        draft
+    }
+
 }

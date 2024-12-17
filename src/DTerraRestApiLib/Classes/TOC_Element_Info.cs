@@ -15,6 +15,7 @@ namespace DocTerraRestApiLib.Classes
         public string? id { get; set; }
 
         public bool? isShowInToc { get; set; }
+
         public int? ordinalNo { get; set; }
 
         public string? parentId { get; set; }

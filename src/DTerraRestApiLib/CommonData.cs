@@ -15,7 +15,7 @@ namespace DocTerraRestApiLib
                 return new System.Text.Json.JsonSerializerOptions
                 {
                     Encoder = System.Text.Encodings.Web.JavaScriptEncoder.Create(System.Text.Unicode.UnicodeRanges.BasicLatin, System.Text.Unicode.UnicodeRanges.Cyrillic),
-                    WriteIndented = true
+                    WriteIndented = true,
                 };
             }
         }

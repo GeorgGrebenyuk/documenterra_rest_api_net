@@ -40,11 +40,6 @@ namespace DocTerraRestApiLib.Classes
 
         public bool? isEnabled { get; set; }
 
-        //public string ToJson()
-        //{
-        //    return System.Text.Json.JsonSerializer.Serialize(this, typeof(Users_UserProfile_Info), CommonData.p_JsonSerializerOptions_Write);
-        //}
-
         public static Users_UserProfile_Info? LoadFrom(string json)
         {
             return (Users_UserProfile_Info?)JsonSerializer.Deserialize(json,

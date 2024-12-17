@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace DocTerraRestApiLib.Classes
 {
@@ -9,9 +10,17 @@ namespace DocTerraRestApiLib.Classes
     /// </summary>
     public class Users_UserProfileUpdate_Arguments
     {
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? email { get; set; }
+
+
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? userRole { get; set; }
+
+
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? isEnabled { get; set; }
+
         public string? updatedFields { get; internal set; }
 
         public string ToJson()

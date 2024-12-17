@@ -12,9 +12,9 @@ namespace DocTerraRestApiLib
 {
     public class DTerra_Connection
     {
-        private string p_API_Link;
-        private string p_Login;
-        private string p_Password;
+        internal string p_API_Link;
+        internal string p_Login;
+        internal string p_Password;
 
 
         public enum ConnectType : int

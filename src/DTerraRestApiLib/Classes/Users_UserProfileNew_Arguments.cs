@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace DocTerraRestApiLib.Classes
 {
@@ -13,10 +14,13 @@ namespace DocTerraRestApiLib.Classes
         {
             public string? email { get; set; }
 
+            [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
             public string? firstName { get; set; }
 
+            [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
             public string? middleName { get; set; }
 
+            [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
             public string? lastName { get; set; }
         }
 
@@ -24,9 +28,13 @@ namespace DocTerraRestApiLib.Classes
 
         public userInfo_Definition? userInfo { get; set; }
 
+        [JsonIgnore]
         public string[]? userRoles { get; set; }
+
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? userRole { get { return string.Join(",", userRoles ?? new string[] { }); } }
 
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? isDontSendEmail { get; set; }
 
         public string ToJson()

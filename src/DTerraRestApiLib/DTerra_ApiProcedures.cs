@@ -56,7 +56,7 @@ namespace DocTerraRestApiLib
         }
 
         //https://docs.documenterra.ru/articles/#!manual/api-publikatsiya-proyekta
-        public void PublishProject(string idPublication, PublicationCreateInfo publication_Info)
+        public void PublishProject(string idPublication, PublicationCreateInfo_Arguments publication_Info)
         {
             var result = p_Connection.CreateRequest(DTerra_Connection.ConnectType.POST, $"projects/{idPublication}?action=publish", publication_Info.ToJson());
         }
@@ -68,7 +68,7 @@ namespace DocTerraRestApiLib
         }
 
         //https://docs.documenterra.ru/articles/#!manual/api-eksport-publikatsii
-        public PublicationTaskInfo? ExportPublication(string idPublication, PublicationExportInfo ExportInfo)
+        public PublicationTaskInfo? ExportPublication(string idPublication, PublicationExportInfo_Arguments ExportInfo)
         {
             var result = p_Connection.CreateRequest(DTerra_Connection.ConnectType.POST, $"projects/{idPublication}?action=export", ExportInfo.ToJson());
             return PublicationTaskInfo.LoadFrom(result.Response);
@@ -83,7 +83,7 @@ namespace DocTerraRestApiLib
 
         public PublicationTaskInfo? CreateBackupOfProject(string idProject, string outputFileName)
         {
-            ProjectBackup data_temp = new ProjectBackup(outputFileName);
+            ProjectBackup_Arguments data_temp = new ProjectBackup_Arguments(outputFileName);
             var result = p_Connection.CreateRequest(DTerra_Connection.ConnectType.POST, $"projects/{idProject}?action=download", data_temp.ToJson());
             return PublicationTaskInfo.LoadFrom(result.Response);
         }
@@ -152,7 +152,7 @@ namespace DocTerraRestApiLib
         }
 
         //https://docs.documenterra.ru/articles/#!manual/api-sozdaniye-fayla-ili-papki
-        public void CreateFileOrFolder(string storagePath, FormatVariant format, bool isOverwrite, Storage_FileOrFolderCreation_Info? FileOrFolderInfo)
+        public void CreateFileOrFolder(string storagePath, FormatVariant format, bool isOverwrite, Storage_FileOrFolderCreation_Arguments? FileOrFolderInfo)
         {
             var result = p_Connection.CreateRequest(DTerra_Connection.ConnectType.POST, $"storage/{storagePath}?format={format.ToString()}&isOverwrite={isOverwrite}", FileOrFolderInfo?.ToJson() ?? "");
         }
@@ -260,9 +260,15 @@ namespace DocTerraRestApiLib
         }
 
         //https://docs.documenterra.ru/articles/#!manual/api-sozdaniye-stranitsy
-        public void PageCreateNew(string idProject, Pages_PageCreate_Arguments PageInfo)
+        public Pages_Page_Info? PageCreateNew(string idProject, Pages_PageCreate_Arguments PageInfo)
         {
+            if (PageInfo.assigneeUserName == null) PageInfo.assigneeUserName = this.p_Connection.p_Login;
+            if (PageInfo.ownerUserName == null) PageInfo.ownerUserName = this.p_Connection.p_Login;
+
+            var json = PageInfo.ToJson();
             var result = p_Connection.CreateRequest(DTerra_Connection.ConnectType.POST, $"projects/{idProject}/articles", PageInfo.ToJson());
+
+            return Pages_Page_Info.LoadFrom(result.Response);
         }
 
         //https://docs.documenterra.ru/articles/#!manual/api-obnovleniye-stranitsy

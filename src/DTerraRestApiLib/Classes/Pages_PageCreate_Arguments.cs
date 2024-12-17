@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace DocTerraRestApiLib.Classes
 {
@@ -11,26 +12,33 @@ namespace DocTerraRestApiLib.Classes
     {
         public string? assigneeUserName { get; set; }
 
-        public string? body { get; set; } = null;
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? body { get; set; }
 
         public string? id { get; set; }
 
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? isShowInToc { get; set; } = false;
 
         public string? ownerUserName { get; set; }
 
-        public string? parentTocNodeId { get; set; } = null;
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? parentTocNodeId { get; set; }
 
+        public string? statusName { get; set; } = "draft";
 
-        public string? statusName { get; set; }
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? title { get; set; }
 
-        public string? title { get; set; } = null;
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? tocNodeCaption { get; set; }
 
-        public string? tocNodeCaption { get; set; } = null;
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public int? tocNodeOrdinalNo { get; set; }
 
-        public int? tocNodeOrdinalNo { get; set; } = null;
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string[]? indexKeywords { get; set; }
 
-        public string[]? indexKeywords { get; set; } = null;
 
         public string ToJson()
         {
